@@ -1,1 +1,17 @@
 @import '~bootstrap/scss/bootstrap';
+
+$cell-color: '#ffc0cb';
+$piece-color: '#fff';
+$border-color: '#fff';
+
+body {
+  text-align: center;
+}
+
+.cell {
+  background-color: $cell-color;
+  border: 4px solid $border-color;
+  color: $piece-color;
+  font-size: 2em;
+  padding: 80px;
+}
