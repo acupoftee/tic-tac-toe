@@ -14,7 +14,11 @@ $(() => {
     // console.log(`Cell Array at index ${i}`, $cellArray[i])
     const currentCell = $cellArray[i]
     $(currentCell).on('click', function () {
-      $(currentCell).text('x')
+      if ($(currentCell).text() === 'x') {
+        console.log('This spot\'s taken cus YOURE TOO SLOOOOOOOOOW')
+      } else {
+        $(currentCell).text('x')
+      }
     })
   }
 })
