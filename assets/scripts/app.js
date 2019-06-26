@@ -8,4 +8,13 @@
 
 $(() => {
   // your JS code goes here
+  const $cellArray = $('.cell')
+  // console.log($cellArray)
+  for (let i = 0; i < $cellArray.length; i++) {
+    // console.log(`Cell Array at index ${i}`, $cellArray[i])
+    const currentCell = $cellArray[i]
+    $(currentCell).on('click', function () {
+      $(currentCell).text('x')
+    })
+  }
 })
