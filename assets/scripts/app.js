@@ -8,16 +8,25 @@
 
 $(() => {
   // your JS code goes here
+
+  // gets all the cells
   const $cellArray = $('.cell')
-  // console.log($cellArray)
+
+  let clicks = 0
   for (let i = 0; i < $cellArray.length; i++) {
-    // console.log(`Cell Array at index ${i}`, $cellArray[i])
     const currentCell = $cellArray[i]
+    // adds an event listener for each cells
     $(currentCell).on('click', function () {
-      if ($(currentCell).text() === 'x') {
+      //
+      if ($(currentCell).text() === 'X' || $(currentCell).text() === 'O') {
         console.log('This spot\'s taken cus YOURE TOO SLOOOOOOOOOW')
       } else {
-        $(currentCell).text('x')
+        // add a click
+        ++clicks
+
+        // swap pieces
+        $(currentCell).text(clicks % 2 ? 'X' : 'O')
+        $('.player').text(clicks % 2 ? 'O' : 'X')
       }
     })
   }
