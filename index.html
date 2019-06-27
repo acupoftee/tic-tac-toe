@@ -13,9 +13,17 @@
     </head>
     <body>
       <h1>tic tac toe \o/</h1>
-      <p class="main-message"><span class="player">X</span>'s turn</p>
-      <p class="message"></p>
-      <div class="container">
+      <div class="container game-forms">
+        <form id="#sign-up">
+          <input name="credentials[email]" type="email" placeholder="Email">
+          <input name="credentials[password]" type="password" placeholder="Password">
+          <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password">
+          <button>Sign Up</button>
+        </form>
+      </div>
+      <div class="container game-board">
+        <p class="main-message"><span class="player">X</span>'s turn</p>
+        <p class="message"></p>
         <div class="row">
           <div class="cell col-4" id="0"></div>
           <div class="cell col-4" id="1"></div>
