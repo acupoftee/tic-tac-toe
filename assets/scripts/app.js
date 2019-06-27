@@ -20,7 +20,7 @@ $(() => {
       // don't add anything if the board is occupied
       if ($(currentCell).text() === 'X' || $(currentCell).text() === 'O') {
         console.log('This spot\'s taken cus YOURE TOO SLOOOOOOOOOW')
-      } else {
+      } else if (!board.checkWin()) {
         // add a click
         ++clicks
         const cellText = clicks % 2 ? 'X' : 'O'
@@ -33,12 +33,11 @@ $(() => {
         // update gameBoard
         board.addPiece(i, cellText)
         console.log('Board state', board.gameBoard)
+        if (board.checkWin()) {
+          $('p').text('Thanks for playing!')
+        }
       }
     })
-    if (board.checkWin()) {
-      $('p').text('Thanks for playing!')
-      break
-    }
   }
   // for (let i = 0; i < $cellArray.length; i++) {
   //   do {
