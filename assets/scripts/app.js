@@ -19,7 +19,8 @@ $(() => {
     $(currentCell).on('click', function () {
       // don't add anything if the board is occupied
       if ($(currentCell).text() === 'X' || $(currentCell).text() === 'O') {
-        console.log('This spot\'s taken cus YOURE TOO SLOOOOOOOOOW')
+        // console.log('This spot\'s taken cus YOURE TOO SLOOOOOOOOOW')
+        alert('This spot\'s taken cus YOURE TOO SLOOOOOOOOOW')
       } else if (!board.checkWin()) {
         // add a click
         ++clicks
@@ -39,31 +40,4 @@ $(() => {
       }
     })
   }
-  // for (let i = 0; i < $cellArray.length; i++) {
-  //   do {
-  //     const currentCell = $cellArray[i]
-  //     // adds an event listener for each cells
-  //     $(currentCell).on('click', function () {
-  //       // don't add anything if the board is occupied
-  //       if ($(currentCell).text() === 'X' || $(currentCell).text() === 'O') {
-  //         console.log('This spot\'s taken cus YOURE TOO SLOOOOOOOOOW')
-  //       } else {
-  //         // add a click
-  //         ++clicks
-  //         const cellText = clicks % 2 ? 'X' : 'O'
-  //         const turnText = clicks % 2 ? 'O' : 'X'
-  //
-  //         // swap pieces
-  //         $(currentCell).text(cellText)
-  //         $('.player').text(turnText)
-  //
-  //         // update gameBoard
-  //         board.addPiece(i, cellText)
-  //         console.log('Board state', board.gameBoard)
-  //         console.log(board.checkWin())
-  //       }
-  //     })
-  //   } while (!board.checkWin())
-  // }
-  // $('p').text('Thanks for playing!')
 })
