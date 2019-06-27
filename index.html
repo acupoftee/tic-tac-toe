@@ -14,13 +14,18 @@
     <body>
       <h1>tic tac toe \o/</h1>
       <div class="container game-forms">
-        <form id="#sign-up">
-          <input name="credentials[email]" type="email" placeholder="Email">
-          <input name="credentials[password]" type="password" placeholder="Password">
-          <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password">
-          <button>Sign Up</button>
+        <h3 id="form-message"></h3>
+
+        <!--SIGN UP-->
+        <form id="sign-up">
+          <input name="credentials[email]" type="email" placeholder="Email" required>
+          <input name="credentials[password]" type="password" placeholder="Password" required>
+          <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password" required>
+          <button type="submit">Sign Up</button>
         </form>
       </div>
+
+
       <div class="container game-board">
         <p class="main-message"><span class="player">X</span>'s turn</p>
         <p class="message"></p>
