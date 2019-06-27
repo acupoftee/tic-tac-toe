@@ -1,6 +1,6 @@
 'use strict'
 
-// const store = require('../store.js')
+const store = require('../store.js')
 
 const successMessage = message => {
   $('#form-message').text(message)
@@ -21,14 +21,27 @@ const failMessage = message => {
 }
 
 const signUpSuccessful = () => {
-  successMessage('You signed up successfully! 🎉')
+  successMessage('You\'ve signed up successfully! 🎉')
 }
 
 const signUpFailure = () => {
   failMessage('You shall not pass 🧙‍♂️‍')
 }
 
+const signInSuccessful = responseData => {
+  successMessage('You\'ve signed in successfully! 🎉')
+
+  // update the user's session info for later
+  store.user = responseData.user
+}
+
+const signInFailure = () => {
+  failMessage('You shall not pass 🧙‍♂️‍')
+}
+
 module.exports = {
   signUpSuccessful,
-  signUpFailure
+  signUpFailure,
+  signInSuccessful,
+  signInFailure
 }
