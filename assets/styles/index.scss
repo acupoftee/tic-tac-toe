@@ -8,6 +8,10 @@ body {
   text-align: center;
 }
 
+.game-board {
+  visibility: hidden;
+}
+
 .cell {
   background: $cell-color;
   border: 4px solid $cell-border-color;
