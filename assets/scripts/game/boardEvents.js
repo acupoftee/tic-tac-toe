@@ -12,7 +12,10 @@ const runGame = () => {
     $(currentCell).on('click', function () {
       // don't add anything if the board is occupied
       if ($(currentCell).text() === 'X' || $(currentCell).text() === 'O') {
-        console.log('This spot\'s taken cus YOURE TOO SLOOOOOOOOOW')
+        // console.log('This spot\'s taken cus YOURE TOO SLOOOOOOOOOW')
+        $('.message').text('This spot\'s taken cus YOURE TOO SLOOOOOOOOOW')
+        $('.message').show()
+        hideErrorMessage()
       } else if (!board.checkWin()) {
         // add a click
         ++clicks
@@ -32,6 +35,13 @@ const runGame = () => {
       }
     })
   }
+} // end runGame
+
+const hideErrorMessage = () => {
+  setTimeout(function () {
+    $('.message').text('')
+    $('.message').hide()
+  }, 3000)
 }
 
 module.exports = {
