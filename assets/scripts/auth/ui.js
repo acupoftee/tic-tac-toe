@@ -33,6 +33,7 @@ const signInSuccessful = responseData => {
 
   // update the user's session info for later
   store.user = responseData.user
+  makeBoardAppear()
 }
 
 const signInFailure = () => {
@@ -53,6 +54,11 @@ const signOutSuccessful = () => {
 
 const signOutFailure = () => {
   failMessage('Failed to sign out :C')
+}
+
+const makeBoardAppear = () => {
+  $('.game-board').removeClass('hidden')
+  $('.game-board').addClass('active')
 }
 
 module.exports = {
