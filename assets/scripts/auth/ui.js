@@ -47,11 +47,21 @@ const changePasswordFailure = () => {
   failMessage('Password change failed')
 }
 
+const signOutSuccessful = () => {
+  successMessage('You\'ve signed out successfully! 🎉')
+}
+
+const signOutFailure = () => {
+  failMessage('Failed to sign out :C')
+}
+
 module.exports = {
   signUpSuccessful,
   signUpFailure,
   signInSuccessful,
   signInFailure,
   changePasswordSuccessful,
-  changePasswordFailure
+  changePasswordFailure,
+  signOutSuccessful,
+  signOutFailure
 }
