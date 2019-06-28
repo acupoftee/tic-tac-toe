@@ -33,7 +33,7 @@ const signInSuccessful = responseData => {
 
   // update the user's session info for later
   store.user = responseData.user
-  revealBoard()
+  revealButton()
 }
 
 const signInFailure = () => {
@@ -50,21 +50,31 @@ const changePasswordFailure = () => {
 
 const signOutSuccessful = () => {
   successMessage('You\'ve signed out successfully! 🎉')
-  hideBoard()
+  hideButton()
 }
 
 const signOutFailure = () => {
   failMessage('Failed to sign out :C')
 }
 
-const revealBoard = () => {
-  $('.game-board').removeClass('hidden')
-  $('.game-board').addClass('active')
+// const revealBoard = () => {
+//   $('.game-board').removeClass('hidden')
+//   $('.game-board').addClass('active')
+// }
+//
+// const hideBoard = () => {
+//   $('.game-board').removeClass('active')
+//   $('.game-board').addClass('hidden')
+// }
+
+const revealButton = () => {
+  $('#create-game').removeClass('hidden')
+  $('#create-game').addClass('active')
 }
 
-const hideBoard = () => {
-  $('.game-board').removeClass('active')
-  $('.game-board').addClass('hidden')
+const hideButton = () => {
+  $('#create-game').removeClass('active')
+  $('#create-game').addClass('hidden')
 }
 
 module.exports = {
