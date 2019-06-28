@@ -39,9 +39,19 @@ const signInFailure = () => {
   failMessage('You shall not pass 🧙‍♂️‍')
 }
 
+const changePasswordSuccessful = () => {
+  successMessage('You\'ve changed your password successfully! 🎉')
+}
+
+const changePasswordFailure = () => {
+  failMessage('Password change failed')
+}
+
 module.exports = {
   signUpSuccessful,
   signUpFailure,
   signInSuccessful,
-  signInFailure
+  signInFailure,
+  changePasswordSuccessful,
+  changePasswordFailure
 }

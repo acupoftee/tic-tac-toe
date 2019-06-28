@@ -27,8 +27,8 @@ const onChangePassword = event => {
   const form = event.target
   const formData = getFormFields(form)
   api.changePassword(formData)
-    .then(console.log)
-    .catch(console.error)
+    .then(ui.changePasswordSuccessful)
+    .catch(ui.changePasswordFailure)
 }
 
 module.exports = {
