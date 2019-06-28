@@ -8,8 +8,16 @@ body {
   text-align: center;
 }
 
-.game-board {
+.active {
+  visibility: visible;
+}
+
+.hidden {
   visibility: hidden;
+}
+
+.game-forms {
+  text-align: left;
 }
 
 .cell {
