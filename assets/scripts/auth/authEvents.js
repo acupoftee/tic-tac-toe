@@ -31,8 +31,18 @@ const onChangePassword = event => {
     .catch(ui.changePasswordFailure)
 }
 
+const onSignOut = event => {
+  event.preventDefault()
+  // const form = event.target
+  // const formData = getFormFields(form)
+  api.signOut()
+    .then(console.log)
+    .catch(console.error)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
-  onChangePassword
+  onChangePassword,
+  onSignOut
 }
