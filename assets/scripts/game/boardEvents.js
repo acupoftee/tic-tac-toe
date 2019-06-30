@@ -1,5 +1,6 @@
 'use strict'
 
+const api = require('./api')
 const board = require('./board')
 
 const runGame = () => {
@@ -19,32 +20,57 @@ const runGame = () => {
           hideErrorMessage()
         } else {
           // add a click
-          clicks++
+          ++clicks
           const cellText = clicks % 2 ? 'X' : 'O'
           const turnText = clicks % 2 ? 'O' : 'X'
 
           // swap pieces
           $(currentCell).text(cellText)
-          $('.player').text(turnText)
+          $('.main-message').text(`${turnText}'s turn`)
 
           // update gameBoard
           board.addPiece(i, cellText)
-          console.log('Board state', board.gameBoard)
+          // store.cell.index = i
+          // store.cell.vaue = cellText
+          // console.log(store) ds
 
           if (!board.checkWin() && board.isFull()) {
+            sendMove(i, cellText, true)
             $('.main-message').text('It\'s a tie!')
+            clicks = 0
           } else if (board.checkWin()) {
+            sendMove(i, cellText, true)
             $('.main-message').text(`Thanks for playing! ${cellText} wins!`)
+            clicks = 0
+          } else {
+            sendMove(i, cellText, false)
           }
         }
       } else {
         $('.message').text('The game\'s over, refresh to play again!')
         $('.message').show()
         hideErrorMessage()
+        clicks = 0
       }
     })
   }
 } // end runGame
+
+const sendMove = (index, cell, over) => {
+  const move = {
+    game: {
+      cell: {
+        index: index,
+        value: cell
+      },
+      over: over
+    }
+  }
+  console.log(move)
+  api.updateGame(move)
+    .then(console.log)
+    .catch(console.error)
+}
 
 const hideErrorMessage = () => {
   setTimeout(function () {
