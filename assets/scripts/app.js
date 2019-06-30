@@ -2,10 +2,10 @@
 
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
-const boardEvents = require('./game/boardEvents')
+// const boardEvents = require('./game/boardEvents')
 const authEvents = require('./auth/authEvents')
 const gameEvents = require('./game/gameEvents')
-
+const boardEvents = require('./game/boardEvents')
 // use require without a reference to ensure a file is bundled
 // require('./example')
 
