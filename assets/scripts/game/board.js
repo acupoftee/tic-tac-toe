@@ -1,9 +1,16 @@
 'use strict'
 
-const gameBoard = ['', '', '', '', '', '', '', '', '']
+let gameBoard = ['', '', '', '', '', '', '', '', '']
 const rows = 3
 // let scoreX = 0
 // let scoreO = 0
+
+const resetGame = () => {
+  $('.cell').text('')
+  gameBoard = ['', '', '', '', '', '', '', '', '']
+  $('.main-message').text('X\'s turn')
+  $('.message').text('')
+}
 
 const addPiece = (index, piece) => {
   gameBoard[index] = piece
@@ -69,5 +76,6 @@ module.exports = {
   gameBoard,
   isFull,
   addPiece,
-  checkWin
+  checkWin,
+  resetGame
 }
