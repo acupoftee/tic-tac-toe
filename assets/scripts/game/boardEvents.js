@@ -30,10 +30,8 @@ const runGame = () => {
 
           // update gameBoard
           board.addPiece(i, cellText)
-          // store.cell.index = i
-          // store.cell.vaue = cellText
-          // console.log(store) ds
 
+          // end the game if it's a tie or if there's a winner
           if (!board.checkWin() && board.isFull()) {
             sendMove(i, cellText, true)
             $('.main-message').text('It\'s a tie!')
