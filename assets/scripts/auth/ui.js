@@ -51,6 +51,7 @@ const changePasswordFailure = () => {
 const signOutSuccessful = () => {
   successMessage('You\'ve signed out successfully! 🎉')
   hideButton()
+  hideBoard()
 }
 
 const signOutFailure = () => {
@@ -62,14 +63,17 @@ const signOutFailure = () => {
 //   $('.game-board').addClass('active')
 // }
 //
-// const hideBoard = () => {
-//   $('.game-board').removeClass('active')
-//   $('.game-board').addClass('hidden')
-// }
+const hideBoard = () => {
+  $('.game-board').removeClass('active')
+  $('.game-board').addClass('hidden')
+}
 
 const revealButton = () => {
   $('#create-game').removeClass('hidden')
   $('#create-game').addClass('active')
+
+  $('#get-game').removeClass('hidden')
+  $('#get-game').addClass('active')
 }
 
 const hideButton = () => {
