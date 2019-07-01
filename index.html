@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Tic Tac Toe \o/</title>
+      <title>Tic Tac Toe</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -13,20 +13,59 @@
       <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
     </head>
     <body>
-      <div class="opening">
-      <div class="logo"><span class="x-logo">X</span><span class="o-logo">O</span></div>
-      <h1 class="first-header">Tic Tac Toe</h1>
-      <div class="button-group">
-        <button class="button btn" id="sign-up-button">Sign Up</button>
-        <button class="button btn" id="sign-in-button">Sign In</button>
+      <div class="logo">
+        <div class="x-logo">X</div>&thinsp;<div class="o-logo">O</div>
       </div>
+      <div class="opening active">
+        <h1 class="first-header">Tic Tac Toe</h1>
+        <div class="button-group">
+          <button class="button btn" id="sign-up-button">Sign Up</button>
+          <button class="button btn" id="sign-in-button">Sign In</button>
+        </div>
     </div>
 
-      <h1 class="second-header hidden">Tic Tac Toe</h1>
+      <!-- <h1 class="second-header hidden">Tic Tac Toe</h1> -->
       <div class="container game-forms">
-        <h3 id="form-message"></h3>
+        <!-- <div class="logo no-ani hidden">
+          <div class="x-logo">X</div><div class="o-logo">O</div>
+        </div> -->
+        <h1 class="second-header hidden">Tic Tac Toe</h1>
+        <div class="sign-up-box hidden">
+        <form id="sign-up">
+          <h3>Sign Up</h3>
+          <div class="forms">
+          <input name="credentials[email]" type="email" placeholder="Email" required>
+          <input name="credentials[password]" type="password" placeholder="Password" required>
+          <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password" required>
+          <button type="submit">Sign Up</button>
+        </div>
+        </form>
+      </div>
 
-        <form id="sign-up" class="hidden">
+      <div class="sign-in-box hidden">
+        <form id="sign-in" class="hidden">
+          <h3>Sign In</h3>
+          <div class="forms">
+          <input name="credentials[email]" type="email" placeholder="Email" required>
+          <input name="credentials[password]" type="password" placeholder="Password" required>
+          <button type="submit">Sign In</button>
+        </div>
+        </form>
+      </div>
+
+      <div class="change-password-box hidden">
+        <form id="change-password" class="hidden">
+          <h3>Change Password</h3>
+          <div class="forms">
+          <input name="passwords[old]" type="password" placeholder="Old Password" required>
+          <input name="passwords[new]" type="password" placeholder="New Password" required>
+          <button type="submit">Change Password</button>
+        </div>
+        </form>
+      </div>
+        <!-- <h3 id="form-message"></h3> -->
+
+        <!-- <form id="sign-up" class="hidden">
           <h3>Sign Up</h3>
           <input name="credentials[email]" type="email" placeholder="Email" required>
           <input name="credentials[password]" type="password" placeholder="Password" required>
@@ -51,8 +90,9 @@
         <form id="sign-out" class="hidden">
           <h3>Sign Out</h3>
           <button type="submit">Sign Out</button>
-        </form>
+        </form> -->
       </div>
+      <!-- forms -->
 
       <form id="create-game" class="hidden">
         <button type="submit">New Game</button>
@@ -66,7 +106,7 @@
       <div class="container game-board hidden">
         <p class="main-message"></p>
         <p class="message"></p>
-        <div class="cells">
+        <!-- <div class="cells">
         <div class="row">
           <div class="cell col-4" id="0"></div>
           <div class="cell col-4" id="1"></div>
@@ -82,7 +122,7 @@
           <div class="cell col-4" id="7"></div>
           <div class="cell col-4" id="8"></div>
         </div>
-      </div>
+      </div> -->
     </div>
     </body>
 </html>
