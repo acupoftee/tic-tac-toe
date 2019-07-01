@@ -20,5 +20,6 @@ $(() => {
 
   // GAME EVENTS
   $('#create-game').on('submit', gameEvents.onCreateGame)
+  $('#get-game').on('submit', gameEvents.onGetStats)
   boardEvents.runGame()
 })
