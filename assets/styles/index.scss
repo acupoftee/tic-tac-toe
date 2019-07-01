@@ -5,13 +5,14 @@ $cell-border-color: white;
 $piece-color: white;
 
 // production palette
-$background: #AAD2D8;
-$piece-o: #748E99;
-$piece-x: #373E49;
+$background: #aad2d8;
+$piece-o: #748e99;
+$piece-x: #373e49;
 $text-color: $piece-x;
 $form-color: $text-color;
-$white: #F7FCFC;
-$smol-headers: darken(#97A6AF, 20%);
+$white: #f7fcfc;
+$gray: #97a6af;
+$smol-headers: darken($gray, 20%);
 
 // position constants
 $title-margin-top: 1%;
@@ -46,21 +47,6 @@ h3 {
   }
 }
 
-// .no-ani {
-//   @extend .logo;
-//   flex-direction: row;
-//
-//   .x-logo {
-//     animation: none;
-//     color: $piece-x;
-//     transform-origin: center;
-//   }
-//
-//   .o-logo {
-//     color: $piece-o;
-//   }
-// }
-
 .first-header,
 .second-header {
   color: $text-color;
@@ -71,6 +57,7 @@ h3 {
   color: $piece-color;
   margin: 5px auto;
   min-width: 15vw;
+
   &:hover {
     color: lighten($piece-o, 20%);
   }
