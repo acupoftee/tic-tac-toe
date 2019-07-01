@@ -21,15 +21,13 @@ const revealBoard = () => {
   $('.game-board').addClass('active')
 }
 
-const hideBoard = () => {
-  $('.game-board').removeClass('active')
-  $('.game-board').addClass('hidden')
-}
+// const hideBoard = () => {
+//   $('.game-board').removeClass('active')
+//   $('.game-board').addClass('hidden')
+// }
 
 const getAllGamesSuccess = responseData => {
-  $('.main-message').text(`You've played ${responseData.games.length} games`)
-  console.log(`You've played ${responseData.games.length} games`)
-  hideBoard()
+  $('.games').text(`You've played ${responseData.games.length} games`)
 }
 
 // const hideBoard = () => {
