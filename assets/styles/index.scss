@@ -1,3 +1,4 @@
+// $body-bg: #AAD2D8;
 @import '~bootstrap/scss/bootstrap';
 
 $cell-color: pink;
@@ -5,20 +6,71 @@ $cell-border-color: white;
 $piece-color: white;
 
 // production palette
-$background: '#AAD2D8';
-$piece-x: '#F7FCFC';
+$background: #AAD2D8;
+$piece-o: #748E99;
+$piece-x: #373E49;
+$text-color: $piece-x;
 
 body {
-  background: $background;
+  background-color: $background;
+  font-family: 'Fredoka One', cursive;
   text-align: center;
+}
+
+.x-logo {
+  // position: absolute;
+  // right: 50%;
+  color: $piece-x;
+  transform-origin: center;
+  z-index: 2;
+  animation: spinX 4s linear infinite;
+}
+
+.o-logo {
+  color: $piece-o;
+  // position: absolute;
+  // left: 5%;
+}
+
+.logo {
+  font-size: 10em;
+  line-height: 1em;
+}
+
+.first-header {
+  color: $text-color;
+}
+
+.btn {
+  background: $piece-x;
+  color: $piece-color;
+  margin: 5px auto;
+  min-width: 15vw;
+  &:hover {
+    color: lighten($piece-o, 20%);
+  }
+}
+
+.opening {
+  margin-top: 15%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .active {
   visibility: visible;
 }
 
+.button-group {
+  display: flex;
+  flex-direction: column;
+  font-weight: 100;
+}
+
 .hidden {
-  visibility: hidden;
+  display: none;
 }
 
 .game-forms {
@@ -41,4 +93,10 @@ body {
   height: 40vh;
   margin: 0 auto;
   width: 33vw;
+}
+
+@keyframes spinX {
+  100% {
+    transform: rotate(360deg);
+  }
 }
