@@ -4,7 +4,12 @@ $cell-color: pink;
 $cell-border-color: white;
 $piece-color: white;
 
+// production palette
+$background: '#AAD2D8';
+$piece-x: '#F7FCFC';
+
 body {
+  background: $background;
   text-align: center;
 }
 
@@ -21,10 +26,19 @@ body {
 }
 
 .cell {
+  align-items: center;
   background: $cell-color;
   border: 4px solid $cell-border-color;
   color: $piece-color;
+  display: flex;
   font-size: 3em;
-  height: 240px;
-  padding: 80px;
+  height: 20vh;
+  justify-content: center;
+  width: 20vw;
+}
+
+.cells {
+  height: 40vh;
+  margin: 0 auto;
+  width: 33vw;
 }
