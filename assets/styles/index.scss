@@ -1,4 +1,3 @@
-// $body-bg: #AAD2D8;
 @import '~bootstrap/scss/bootstrap';
 
 $cell-color: pink;
@@ -10,6 +9,9 @@ $background: #AAD2D8;
 $piece-o: #748E99;
 $piece-x: #373E49;
 $text-color: $piece-x;
+$form-color: $text-color;
+$white: #F7FCFC;
+$smol-headers: darken(#97A6AF, 20%);
 
 body {
   background-color: $background;
@@ -17,25 +19,47 @@ body {
   text-align: center;
 }
 
-.x-logo {
-  animation: spinX 10s linear infinite;
-  color: $piece-x;
-  transform-origin: center;
-}
-
-.o-logo {
-  color: $piece-o;
+h3 {
+  color: $smol-headers;
 }
 
 .logo {
   display: flex;
-  flex-direction: column;
   font-size: 11em;
   justify-content: center;
-  line-height: .9em;
+  letter-spacing: 0;
+  line-height: 1em;
+  margin-bottom: auto;
+  margin-top: 10%;
+
+  .x-logo {
+    animation: spinX 10s linear infinite;
+    color: $piece-x;
+    transform-origin: center;
+  }
+
+  .o-logo {
+    color: $piece-o;
+  }
 }
 
-.first-header {
+// .no-ani {
+//   @extend .logo;
+//   flex-direction: row;
+//
+//   .x-logo {
+//     animation: none;
+//     color: $piece-x;
+//     transform-origin: center;
+//   }
+//
+//   .o-logo {
+//     color: $piece-o;
+//   }
+// }
+
+.first-header,
+.second-header {
   color: $text-color;
 }
 
@@ -51,14 +75,48 @@ body {
 
 .opening {
   align-items: center;
+  animation: showOpen 1s ease;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-top: 10%;
-  transition: all 0.5s ease;
+  transition: .5s ease;
+  // transition: all .5s ease;
+}
+
+.forms {
+  animation: showForm 1s ease;
+  display: flex;
+  flex-direction: column;
+  margin-top: 3%;
+
+  button,
+  input {
+    border-radius: 20px;
+    margin: 5px auto;
+    width: 20vw;
+  }
+
+  button {
+    background-color: $form-color;
+    color: $white;
+  }
+
+  input {
+    background-color: $white;
+    border: 0;
+    border-radius: 20px;
+    padding: 5px;
+    text-align: center;
+
+    &::placeholder {
+      color: lighten($form-color, 50%);
+    }
+  }
 }
 
 .active {
+  transition: .5s ease;
   visibility: visible;
 }
 
@@ -70,10 +128,11 @@ body {
 
 .hidden {
   display: none;
+  transition: .5s ease;
 }
 
 .game-forms {
-  text-align: left;
+  margin-top: 10%;
 }
 
 .cell {
@@ -97,5 +156,35 @@ body {
 @keyframes spinX {
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes showOpen {
+  0% {
+    margin-top: 50%;
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    margin-top: 10%;
+  }
+}
+
+@keyframes showForm {
+  0% {
+    margin-top: 50%;
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    margin-top: 3%;
   }
 }
