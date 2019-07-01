@@ -18,23 +18,21 @@ body {
 }
 
 .x-logo {
-  // position: absolute;
-  // right: 50%;
+  animation: spinX 10s linear infinite;
   color: $piece-x;
   transform-origin: center;
-  z-index: 2;
-  animation: spinX 4s linear infinite;
 }
 
 .o-logo {
   color: $piece-o;
-  // position: absolute;
-  // left: 5%;
 }
 
 .logo {
-  font-size: 10em;
-  line-height: 1em;
+  display: flex;
+  flex-direction: column;
+  font-size: 11em;
+  justify-content: center;
+  line-height: .9em;
 }
 
 .first-header {
@@ -52,11 +50,12 @@ body {
 }
 
 .opening {
-  margin-top: 15%;
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 10%;
+  transition: all 0.5s ease;
 }
 
 .active {
