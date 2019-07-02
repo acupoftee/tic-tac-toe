@@ -14,6 +14,8 @@ $(() => {
   // your JS code goes here
 
   $('#sign-up-button').on('click', styleEvents.getSignUpForm)
+  $('#sign-in-button').on('click', styleEvents.getSignInForm)
+  $('.back').on('click', styleEvents.getLandingPage)
 
   // AUTHENTICATION EVENTS
   $('#sign-up').on('submit', authEvents.onSignUp)
