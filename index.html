@@ -64,32 +64,9 @@
           <input name="passwords[old]" type="password" placeholder="Old Password" required>
           <input name="passwords[new]" type="password" placeholder="New Password" required>
           <button type="submit">Change Password</button>
-          <button class="back" type="submit">Back</button>
+          <button class="game-back" type="submit">Back</button>
         </div>
       </form>
-    </div>
-
-    <!--
-      <div class="logged-in hidden">
-        <form id="create-game hidden">
-          <button type="submit">New Game</button>
-        </form>
-
-        <form id="get-game hidden">
-          <button type="submit">Game Stats</button>
-        </form>
-
-        <form id="sign-out hidden">
-          <button type="submit">Sign Out</button>
-        </form>
-      </div> -->
-
-    <div class="signed-in hidden">
-      <div class="button-group">
-      <button id="create-game" type="submit">New Game</button>
-      <button id="get-game" type="submit">Game Stats</button>
-      <button id="sign-out" type="submit">Sign Out</button>
-    </div>
     </div>
 
   <div class="modal good fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -110,6 +87,26 @@
       </div>
     </div>
   </div>
+</div>
+
+<div class="modal badUp fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLongTitle">Sign In Failure</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      You shall not pass 🧙‍
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+    </div>
+  </div>
+</div>
 </div>
 
 
@@ -152,73 +149,132 @@
 </div>
 </div>
 
-    <!-- <form id="sign-up" class="hidden">
-          <h3>Sign Up</h3>
-          <input name="credentials[email]" type="email" placeholder="Email" required>
-          <input name="credentials[password]" type="password" placeholder="Password" required>
-          <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password" required>
-          <button type="submit">Sign Up</button>
-        </form>
-
-        <form id="sign-in" class="hidden">
-          <h3>Sign In</h3>
-          <input name="credentials[email]" type="email" placeholder="Email" required>
-          <input name="credentials[password]" type="password" placeholder="Password" required>
-          <button type="submit">Sign In</button>
-        </form>
-
-        <form id="change-password" class="hidden">
-          <h3>Change Password</h3>
-          <input name="passwords[old]" type="password" placeholder="Old Password" required>
-          <input name="passwords[new]" type="password" placeholder="New Password" required>
-          <button type="submit">Change Password</button>
-        </form>
-
-        <form id="sign-out" class="hidden">
-          <h3>Sign Out</h3>
-          <button type="submit">Sign Out</button>
-        </form> -->
+<div class="modal out fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLongTitle">Sign out Successful!</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      You've successfully signed out 🎉 see you again soon!
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn" data-dismiss="modal">Close</button>
+    </div>
   </div>
+</div>
+
+<div class="modal noOut fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLongTitle">Sign Out Failure</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      You shall not leave 🧙‍
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
+</div>
   <!-- forms -->
 
 
 
   <p class="games"></p>
-  <div class="container game-board hidden">
+  <div class="container gameboard hidden">
     <p class="main-message"></p>
     <p class="message"></p>
     <div class="cells embed-responsive embed-responsive-1by1">
-      <div class="row embed-responsive-item">
-        <div class="col-4 cell"></div>
-        <div class="col-4 cell"></div>
-        <div class="col-4 cell"></div>
-        <div class="col-4 cell"></div>
-        <div class="col-4 cell"></div>
-        <div class="col-4 cell"></div>
-        <div class="col-4 cell"></div>
-        <div class="col-4 cell"></div>
-        <div class="col-4 cell"></div>
+      <div class="row board embed-responsive-item board-ani">
+        <div class="col-4 cell"><p></p></div>
+        <div class="col-4 cell"><p></p></div>
+        <div class="col-4 cell"><p></p></div>
+        <div class="col-4 cell"><p></p></div>
+        <div class="col-4 cell"><p></p></div>
+        <div class="col-4 cell"><p></p></div>
+        <div class="col-4 cell"><p></p></div>
+        <div class="col-4 cell"><p></p></div>
+        <div class="col-4 cell"><p></p></div>
       </div>
     </div>
   </div>
-  <!-- <div class="cells">
-        <div class="row">
-          <div class="cell col-4" id="0"></div>
-          <div class="cell col-4" id="1"></div>
-          <div class="cell col-4" id="2"></div>
-        </div>
-        <div class="row">
-          <div class="cell col-4" id="3"></div>
-          <div class="cell col-4" id="4"></div>
-          <div class="cell col-4" id="5"></div>
-        </div>
-        <div class="row">
-          <div class="cell col-4" id="6"></div>
-          <div class="cell col-4" id="7"></div>
-          <div class="cell col-4" id="8"></div>
-        </div>
-      </div> -->
+  <div class="signed-in hidden">
+    <div class="button-group">
+    <button id="create-game" type="submit">New Game</button>
+    <button id="get-games" type="submit">Game Stats</button>
+    <button id="new-password" type="submit">Settings</button>
+    <button id="sign-out" type="submit">Sign Out</button>
   </div>
+  </div>
+
+  <div class="modal playerStats fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Game Stats</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body gameStats"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="modal newpassword fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Password Change Successful!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        You've successfully changed your password! 🎉
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal nopass fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Password Change Failure</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        You shall not have a new password 🧙‍
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+  </div>
+
 </body>
 
 </html>
