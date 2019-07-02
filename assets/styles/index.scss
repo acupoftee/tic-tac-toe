@@ -1,11 +1,11 @@
 @import '~bootstrap/scss/bootstrap';
 
-$cell-color: pink;
-$cell-border-color: white;
-$piece-color: white;
-
 // production palette
 $background: #aad2d8;
+$border-color: darken($background, 10%);
+$border-thickness: 10px;
+$piece-color: white;
+
 $piece-o: #748e99;
 $piece-x: #373e49;
 $text-color: $piece-x;
@@ -79,29 +79,30 @@ h3 {
   display: flex;
   flex-direction: column;
   margin-top: 3%;
+}
 
-  button,
-  input {
-    border-radius: 20px;
-    margin: 5px auto;
-    width: 20vw;
-  }
+button,
+input {
+  border-radius: 20px;
+  margin: 5px auto;
+  width: 20vw;
+}
 
-  button {
-    background-color: $form-color;
-    color: $white;
-  }
+button {
+  background-color: $form-color;
+  color: darken($white, 5%);
+  letter-spacing: .4em;
+}
 
-  input {
-    background-color: $white;
-    border: 0;
-    border-radius: 20px;
-    padding: 5px;
-    text-align: center;
+input {
+  background-color: $white;
+  border: 0;
+  border-radius: 20px;
+  padding: 5px;
+  text-align: center;
 
-    &::placeholder {
-      color: lighten($form-color, 50%);
-    }
+  &::placeholder {
+    color: lighten($form-color, 50%);
   }
 }
 
@@ -127,20 +128,55 @@ h3 {
 
 .cell {
   align-items: center;
-  background: $cell-color;
-  border: 4px solid $cell-border-color;
-  color: $piece-color;
+  border: $border-thickness / 2.5 solid $border-color;
+  border-bottom: $border-thickness solid $border-color;
+  border-right: $border-thickness solid $border-color;
   display: flex;
-  font-size: 3em;
-  height: 20vh;
+  font-size: 5em;
+  height: calc(100% / 3);
   justify-content: center;
-  width: 20vw;
 }
 
-.cells {
+.cell:nth-child(3n) {
+  border-right: 0;
+}
+
+.cell:nth-last-child(-1n + 3) {
+  border-bottom: 0;
+}
+
+.cell:nth-child(1n) {
+  border-top: 0;
+}
+
+.game-board {
+  margin-top: 5%;
   height: 40vh;
-  margin: 0 auto;
-  width: 33vw;
+  width: 40vw;
+}
+
+
+// .cell {
+//   align-items: center;
+//   background: $cell-color;
+//   border: 4px solid $cell-border-color;
+//   color: $piece-color;
+//   display: flex;
+//   font-size: 3em;
+//   height: 20vh;
+//   justify-content: center;
+//   width: 20vw;
+// }
+//
+// .cells {
+//   height: 40vh;
+//   margin: 0 auto;
+//   width: 33vw;
+// }
+
+.logged-in {
+  display: flex;
+  flex-direction: column;
 }
 
 @keyframes spinX {
