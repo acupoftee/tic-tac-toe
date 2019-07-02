@@ -24,6 +24,8 @@ The design was inspired by [Google's in browser tic tac toe game](https://www.go
 Problem solving strategies involved were first creating a plan on paper, then translating it into psuedocode, and finally coded the solution. The [SEI issue tracker](https://git.generalassemb.ly/ga-wdi-boston/game-project/issues) helped with arriving at solutions with my own approach.
 
 ### Wireframes
+Here are the original wireframes for this project. The design deviated from this throughout the project. This only served as a starting point.
+
 <img src="https://i.imgur.com/4krLLTkl.jpg">
 <img src="https://i.imgur.com/OjTHAVd.jpg">
 
