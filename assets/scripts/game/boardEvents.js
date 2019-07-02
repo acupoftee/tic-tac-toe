@@ -14,7 +14,6 @@ const runGame = () => {
       // don't add anything if the board is occupied
       if (!board.isFull() && !board.checkWin()) {
         if ($(currentCell).text() === 'X' || $(currentCell).text() === 'O') {
-          // console.log('This spot\'s taken cus YOURE TOO SLOOOOOOOOOW')
           $('.message').text('This spot\'s taken cus YOURE TOO SLOOOOOOOOOW')
           $('.message').show()
           hideErrorMessage()
@@ -23,9 +22,11 @@ const runGame = () => {
           ++clicks
           const cellText = clicks % 2 ? 'X' : 'O'
           const turnText = clicks % 2 ? 'O' : 'X'
+          const cellColor = clicks % 2 ? '#373e49' : '#f7fcfc'
 
           // swap pieces
-          $(currentCell).text(cellText)
+          $(currentCell).text(cellText).css('color', cellColor)
+          $(currentCell).addClass('letter-ani')
           $('.main-message').text(`${turnText}'s turn`)
 
           // update gameBoard
@@ -36,10 +37,12 @@ const runGame = () => {
             sendMove(i, cellText, true)
             $('.main-message').text('It\'s a tie!')
             clicks = 0
+            $('.gameboard').removeClass('board-ani')
           } else if (board.checkWin()) {
             sendMove(i, cellText, true)
             $('.main-message').text(`Thanks for playing! ${cellText} wins!`)
             clicks = 0
+            $('.gameboard').removeClass('board-ani')
           } else {
             sendMove(i, cellText, false)
           }
