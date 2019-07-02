@@ -18,7 +18,8 @@ const createGameFailure = () => {
 }
 
 const getAllGamesSuccess = responseData => {
-  $('.gameStats').text(`You've played ${responseData.games.length} games! Keep it up! 💪🔥`)
+  const word = responseData.games.length === 1 ? 'game' : 'games'
+  $('.gameStats').text(`You've played ${responseData.games.length} ${word}! Keep it up! 💪🔥`)
   $('.playerStats').modal('show')
 }
 
