@@ -24,13 +24,13 @@ Problem solving strategies involved were first creating a plan on paper, then tr
 ### Wireframes
 Here are the original wireframes for this project. The design deviated from this throughout the project. This only served as a starting point.
 
+<p align=center>
 <img src="https://i.imgur.com/4krLLTkl.jpg" height="400">
 <img src="https://i.imgur.com/OjTHAVd.jpg" height="400">
+</p>
 
 ## Game Prospects
-Improvements to be made are animations and/or style changes indicating who the winner is.
-
-There may also be improved responsive design so that this can be enjoyed on mobile as well.
+Improvements to be made are animations and/or style changes indicating who the winner is. There may also be improved responsive design so that this can be enjoyed on mobile as well.
 
 Player stats should include a winrate or win/loss record for stats to be truly meaningful. This will entail improved win check methods that will properly use the API.
 
