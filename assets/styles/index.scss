@@ -125,13 +125,17 @@ input {
   margin-top: $title-margin-top;
 }
 
+.close {
+  text-align: right;
+}
+
 .cell {
   align-items: center;
   border: 0;
   border-bottom: $border-thickness solid $border-color;
   border-right: $border-thickness solid $border-color;
   display: flex;
-  font-size: 6em;
+  font-size: 9em;
   height: calc(100% / 3);
   justify-content: center;
 
