@@ -1,21 +1,19 @@
-# Tic Tac Toe ✨
-
 <p align=center>
 <img src="https://thumbs.gfycat.com/FairParallelAddax-size_restricted.gif" alt="tic tac toe" title="tic tac toe">
 </p>
 
-### Tic Tac Toe is a multiplayer player browser game where you can face off friends (and/or yourself) in a tic tac toe battle! 💪
+## About
+Tic Tac Toe is a multiplayer player browser game where you can face off friends (and/or yourself) in a tic tac toe battle! 💪
+
+Users can also create an accout and sign into an existing account to view stats!
 
 
 <p align=center>
-<img src="https://thumbs.gfycat.com/SlimPracticalChrysalis-small.gif">
+<img src="https://thumbs.gfycat.com/SlimPracticalChrysalis-small.gif" height="400">
 </p>
 
-
-### Users can also create an accout and sign into an existing account to view stats!
-
 <p align=center>
-<img src="https://thumbs.gfycat.com/ThoseAlienatedHorsemouse-small.gif">
+<img src="https://thumbs.gfycat.com/ThoseAlienatedHorsemouse-small.gif" height="400">
 </p>
 
 ## Planning
@@ -26,8 +24,8 @@ Problem solving strategies involved were first creating a plan on paper, then tr
 ### Wireframes
 Here are the original wireframes for this project. The design deviated from this throughout the project. This only served as a starting point.
 
-<img src="https://i.imgur.com/4krLLTkl.jpg">
-<img src="https://i.imgur.com/OjTHAVd.jpg">
+<img src="https://i.imgur.com/4krLLTkl.jpg" height="400">
+<img src="https://i.imgur.com/OjTHAVd.jpg" height="400">
 
 ## Game Prospects
 Improvements to be made are animations and/or style changes indicating who the winner is.
