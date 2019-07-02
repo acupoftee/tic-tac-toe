@@ -2,38 +2,25 @@
 
 const store = require('../store')
 const board = require('./board')
+const util = require('../utils/util')
 
 const createGameSuccessful = responseData => {
-  console.log('You\'ve created a new game! GLHF')
   store.game = responseData.game.id
   store.plays = responseData.game.cells
-  console.log(store)
   board.resetGame()
-  revealBoard()
+  $('.gameboard').addClass('board-ani')
+  util.hideItems('.logo')
+  util.showItems('.gameboard')
 }
 
 const createGameFailure = () => {
   console.log('Error creating game')
 }
 
-const revealBoard = () => {
-  $('.game-board').removeClass('hidden')
-  $('.game-board').addClass('active')
-}
-
-// const hideBoard = () => {
-//   $('.game-board').removeClass('active')
-//   $('.game-board').addClass('hidden')
-// }
-
 const getAllGamesSuccess = responseData => {
-  $('.games').text(`You've played ${responseData.games.length} games`)
+  $('.gameStats').text(`You've played ${responseData.games.length} games!`)
+  $('.playerStats').modal('show')
 }
-
-// const hideBoard = () => {
-//   $('.game-board').removeClass('active')
-//   $('.game-board').addClass('hidden')
-// }
 
 module.exports = {
   createGameSuccessful,
