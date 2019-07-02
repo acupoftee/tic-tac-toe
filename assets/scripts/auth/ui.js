@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../store.js')
+const util = require('../utils/util')
 
 const successMessage = message => {
   $('#form-message').text(message)
@@ -21,102 +22,52 @@ const failMessage = message => {
 }
 
 const signUpSuccessful = () => {
-  // successMessage('You\'ve signed up successfully! 🎉')
-
-  // $('#Mymodal').modal('show')
-  // $('#sign-up-btn').attr('data-toggle', 'modal')
-  // $('#sign-up-btn').attr('data-target', 'exampleModal')
-  // $('.modal').on('shown.bs.modal', function () {
-  //   $('#sign-up').trigger('focus')
-  // })
   $('.good').modal('show')
-  hideItems('#sign-up')
-  showItems('.opening')
-  revealButton()
+  util.hideItems('.sign-up-box')
+  util.showItems('.opening')
 }
 
 const signUpFailure = () => {
-  // failMessage('You shall not pass 🧙‍♂️‍')
   $('.bad').modal('show')
-//   $('.ad').on('hidden.bs.modal', function (e) {
-//   // do something...
-// })
 }
 
 const signInSuccessful = responseData => {
-  // successMessage('You\'ve signed in successfully! 🎉')
   $('.in').modal('show')
 
   // update the user's session info for later
   store.user = responseData.user
-  hideItems('#sign-in')
-  hideItems('#sign-up')
-  showItems('.signed-in')
-  // revealButton()
+  util.hideItems('.sign-in-box')
+  util.showItems('.signed-in')
 }
 
 const signInFailure = () => {
-  failMessage('You shall not pass 🧙‍♂️‍')
+  $('.badIn').modal('show')
 }
 
 const changePasswordSuccessful = () => {
-  successMessage('You\'ve changed your password successfully! 🎉')
+  $('.newpassword').modal('show')
+  util.hideItems('.change-password-box')
+  util.showItems('.signed-in')
 }
 
 const changePasswordFailure = () => {
-  failMessage('Password change failed')
+  $('.nopass').modal('show')
 }
 
 const signOutSuccessful = () => {
-  successMessage('You\'ve signed out successfully! 🎉')
-  hideButton()
-  hideBoard()
-  showItems('#sign-up')
-  showItems('#sign-in')
-  hideItems('#change-password')
-  hideItems('#sign-out')
-  $('.games').text('')
+  $('.out').modal('show')
+  util.hideItems('.signed-in')
+  util.hideItems('.gameboard')
+
+  util.showItems('.logo')
+  util.showItems('.opening')
+  $('form').trigger('reset')
 }
 
 const signOutFailure = () => {
-  failMessage('Failed to sign out :C')
+  $('.badOut').modal('show')
 }
 
-// const revealBoard = () => {
-//   $('.game-board').removeClass('hidden')
-//   $('.game-board').addClass('active')
-// }
-//
-const hideBoard = () => {
-  $('.game-board').removeClass('active')
-  $('.game-board').addClass('hidden')
-}
-
-const revealButton = () => {
-  $('#create-game').removeClass('hidden')
-  $('#create-game').addClass('active')
-
-  $('#get-game').removeClass('hidden')
-  $('#get-game').addClass('active')
-}
-
-const hideButton = () => {
-  $('#create-game').removeClass('active')
-  $('#create-game').addClass('hidden')
-
-  $('#get-game').removeClass('active')
-  $('#get-game').addClass('hidden')
-}
-
-const hideItems = itemName => {
-  $(itemName).removeClass('active')
-  $(itemName).addClass('hidden')
-}
-
-const showItems = itemName => {
-  $(itemName).removeClass('hidden')
-  $(itemName).addClass('active')
-}
 module.exports = {
   signUpSuccessful,
   signUpFailure,
