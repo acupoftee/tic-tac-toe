@@ -3,24 +3,6 @@
 const store = require('../store.js')
 const util = require('../utils/util')
 
-const successMessage = message => {
-  $('#form-message').text(message)
-  $('#form-message').removeClass('failure')
-  $('#form-message').addClass('success')
-
-  // clear out our forms
-  $('form').trigger('reset')
-}
-
-const failMessage = message => {
-  $('#form-message').text(message)
-  $('#form-message').removeClass('success')
-  $('#form-message').addClass('failure')
-
-  // clear out our forms
-  $('form').trigger('reset')
-}
-
 const signUpSuccessful = () => {
   $('.good').modal('show')
   util.hideItems('.sign-up-box')
@@ -28,7 +10,7 @@ const signUpSuccessful = () => {
 }
 
 const signUpFailure = () => {
-  $('.bad').modal('show')
+  $('.badIn').modal('show')
 }
 
 const signInSuccessful = responseData => {
