@@ -16,6 +16,9 @@ const getSignInForm = event => {
 const getPasswordForm = event => {
   util.showItems('.change-password-box')
   util.hideItems('.signed-in')
+  if ($('.gameboard').hasClass('active')) {
+    util.hideItems('.gameboard')
+  }
 }
 
 const getGamePage = event => {
