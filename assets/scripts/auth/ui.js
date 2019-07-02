@@ -21,23 +21,38 @@ const failMessage = message => {
 }
 
 const signUpSuccessful = () => {
-  successMessage('You\'ve signed up successfully! 🎉')
+  // successMessage('You\'ve signed up successfully! 🎉')
+
+  // $('#Mymodal').modal('show')
+  // $('#sign-up-btn').attr('data-toggle', 'modal')
+  // $('#sign-up-btn').attr('data-target', 'exampleModal')
+  // $('.modal').on('shown.bs.modal', function () {
+  //   $('#sign-up').trigger('focus')
+  // })
+  $('.good').modal('show')
+  hideItems('#sign-up')
+  showItems('.opening')
+  revealButton()
 }
 
 const signUpFailure = () => {
-  failMessage('You shall not pass 🧙‍♂️‍')
+  // failMessage('You shall not pass 🧙‍♂️‍')
+  $('.bad').modal('show')
+//   $('.ad').on('hidden.bs.modal', function (e) {
+//   // do something...
+// })
 }
 
 const signInSuccessful = responseData => {
-  successMessage('You\'ve signed in successfully! 🎉')
+  // successMessage('You\'ve signed in successfully! 🎉')
+  $('.in').modal('show')
 
   // update the user's session info for later
   store.user = responseData.user
   hideItems('#sign-in')
   hideItems('#sign-up')
-  showItems('#change-password')
-  showItems('#sign-out')
-  revealButton()
+  showItems('.signed-in')
+  // revealButton()
 }
 
 const signInFailure = () => {
