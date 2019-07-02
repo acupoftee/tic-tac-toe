@@ -13,19 +13,20 @@ const styleEvents = require('./ui/styleEvents')
 $(() => {
   // your JS code goes here
 
+  // AUTHENTICATION EVENTS
   $('#sign-up-button').on('click', styleEvents.getSignUpForm)
   $('#sign-in-button').on('click', styleEvents.getSignInForm)
-  $('.back').on('click', styleEvents.getLandingPage)
-
-  // AUTHENTICATION EVENTS
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
-  $('#sign-out').on('submit', authEvents.onSignOut)
+  $('#sign-out').on('click', authEvents.onSignOut)
 
   $('#create-game').on('click', gameEvents.onCreateGame)
-  $('#get-game').on('click', gameEvents.onGetStats)
+  $('#get-games').on('click', gameEvents.onGetStats)
+  $('#new-password').on('click', styleEvents.getPasswordForm)
 
   // GAME EVENTS
+  $('.back').on('click', styleEvents.getLandingPage)
+  $('.game-back').on('click', styleEvents.getGamePage)
   boardEvents.runGame()
 })
