@@ -29,6 +29,15 @@ Here are the original wireframes for this project. The design deviated from this
 <img src="https://i.imgur.com/OjTHAVd.jpg" height="400">
 </p>
 
+### User Stories
+This shaped the feature development for the game:
+
+1. As a user, I want to play tic tac toe with another user side by side.
+2. As a user, I want to be able to sign in to tic tac toe so that I can save my game statistics.
+3. As a user, I want to see when I've won or lost a game.
+4. As a user, I want to sign out of my account with saved progress.
+5. As a user, I want to make a new account for tic tac toe if I don't have one yet.
+
 ## Game Prospects
 Improvements to be made are animations and/or style changes indicating who the winner is. There may also be improved responsive design so that this can be enjoyed on mobile as well.
 
