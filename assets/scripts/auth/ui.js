@@ -7,10 +7,12 @@ const signUpSuccessful = () => {
   $('.good').modal('show')
   util.hideItems('.sign-up-box')
   util.showItems('.opening')
+  $('form').trigger('reset')
 }
 
 const signUpFailure = () => {
   $('.badIn').modal('show')
+  $('form').trigger('reset')
 }
 
 const signInSuccessful = responseData => {
@@ -20,20 +22,24 @@ const signInSuccessful = responseData => {
   store.user = responseData.user
   util.hideItems('.sign-in-box')
   util.showItems('.signed-in')
+  $('form').trigger('reset')
 }
 
 const signInFailure = () => {
   $('.badIn').modal('show')
+  $('form').trigger('reset')
 }
 
 const changePasswordSuccessful = () => {
   $('.newpassword').modal('show')
   util.hideItems('.change-password-box')
   util.showItems('.signed-in')
+  $('form').trigger('reset')
 }
 
 const changePasswordFailure = () => {
   $('.nopassword').modal('show')
+  $('form').trigger('reset')
 }
 
 const signOutSuccessful = () => {
@@ -48,6 +54,7 @@ const signOutSuccessful = () => {
 
 const signOutFailure = () => {
   $('.badOut').modal('show')
+  $('form').trigger('reset')
 }
 
 module.exports = {
