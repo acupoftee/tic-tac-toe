@@ -14,7 +14,7 @@ const runGame = () => {
       // don't add anything if the board is occupied
       if (!board.isFull() && !board.checkWin()) {
         if ($(currentCell).text() === 'X' || $(currentCell).text() === 'O') {
-          $('.message').text('This spot\'s taken cus YOURE TOO SLOOOOOOOOOW')
+          $('.message').text('This spot\'s taken')
           $('.message').show()
           hideErrorMessage()
         } else {
