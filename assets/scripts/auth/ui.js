@@ -33,7 +33,7 @@ const changePasswordSuccessful = () => {
 }
 
 const changePasswordFailure = () => {
-  $('.nopass').modal('show')
+  $('.nopassword').modal('show')
 }
 
 const signOutSuccessful = () => {
