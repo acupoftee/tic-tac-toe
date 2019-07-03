@@ -73,10 +73,7 @@ const sendMove = (index, cell, over) => {
       over: over
     }
   }
-  console.log(move)
   api.updateGame(move)
-    .then(console.log)
-    .catch(console.error)
 }
 
 const hideErrorMessage = () => {
