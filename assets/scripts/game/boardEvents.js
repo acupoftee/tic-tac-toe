@@ -25,8 +25,8 @@ const runGame = () => {
           const cellColor = clicks % 2 ? '#373e49' : '#f7fcfc'
 
           // swap pieces
-          $(currentCell).text(cellText).css('color', cellColor)
           $(currentCell).addClass('letter-ani')
+          $(currentCell).text(cellText).css('color', cellColor)
           $('.main-message').text(`${turnText}'s turn`)
 
           // update gameBoard
