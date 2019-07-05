@@ -4,8 +4,7 @@
 $background: #aad2d8;
 $border-color: darken($background, 10%);
 $border-thickness: 10px;
-$piece-color: white;
-
+$piece-color: #fff;
 $piece-o: #748e99;
 $piece-x: #373e49;
 $text-color: $piece-x;
@@ -13,6 +12,20 @@ $form-color: $text-color;
 $white: #f7fcfc;
 $gray: #97a6af;
 $smol-headers: darken($gray, 20%);
+
+
+// purple theme colors
+$purple-background: #f4e7fb;
+$purple-button: #5c0561;
+$purple-piece-x: #64309c;
+
+// logo face vars
+$face: 140px;
+$face-color: #ffdb10;
+$face-shadow: #ffcc24;
+$eyes: #000;
+$eye-radius: 15px;
+$cheeks: #ff7e7e;
 
 // position constants
 $title-margin-top: 1%;
@@ -37,7 +50,8 @@ h3 {
   margin-top: 10%;
 
   .x-logo {
-    animation: spinX 10s linear infinite;
+    // https://callmenick.com/dev/level-up-animations-cubic-bezier/
+    animation: spinX 2.8s 1s cubic-bezier(0, 1, 1, 0) infinite;
     color: $piece-x;
     transform-origin: center;
   }
@@ -70,7 +84,6 @@ h3 {
   flex-direction: column;
   justify-content: center;
   margin-top: $title-margin-top;
-  transition: .5s ease;
 }
 
 .forms {
@@ -154,21 +167,15 @@ input {
 }
 
 .row.board {
-  margin: 0;
+    margin: 0;
 }
 
 .board-ani {
-  animation: growBoard 1s ease;
+  animation: growBoard 1s ease-out;
 }
 
-// .letter-ani {
-//   animation: growLetter .5s ease-out;
-// }
-
-.game-board {
-  height: 30vh;
-  margin-top: 5%;
-  width: 30vw;
+.letter-ani {
+  animation: growLetter .3s ease-out;
 }
 
 .container {
@@ -181,15 +188,148 @@ input {
   flex-direction: column;
 }
 
-@keyframes spinX {
-  100% {
-    transform: rotate(360deg);
+.face {
+  background: lighten($face-color, 10%);
+  border-radius: 100%;
+  box-shadow: inset 10px 1px 0 $face-shadow;
+  height: $face;
+  margin-top: 1.5%;
+  width: $face;
+
+  .eyes {
+    animation: blink 5s infinite;
+    background: $eyes;
+    border-radius: 100%;
+    height: $eye-radius;
+    left: 35px;
+    position: relative;
+    top: 58px;
+    width: $eye-radius;
+
+    &::after {
+      background: $eyes;
+      border-radius: 100%;
+      content: '';
+      height: $eye-radius;
+      left: 60px;
+      position: absolute;
+      width: $eye-radius;
+    }
+  }
+
+  .smile {
+    background: $eyes;
+    border-bottom-left-radius: 90px;
+    border-bottom-right-radius: 90px;
+    height: 15px;
+    left: 55px;
+    position: relative;
+    top: 60px;
+    width: 30px;
+
+    &::after {
+      background: $cheeks;
+      border-radius: 100%;
+      content: '';
+      height: 5px;
+      left: 10px;
+      position: absolute;
+      top: 8px;
+      width: 10px;
+    }
+  }
+
+  .cheeks {
+    background: $cheeks;
+    border-radius: 100%;
+    height: 12px;
+    left: 25px;
+    position: relative;
+    top: 42px;
+    width: 12px;
+
+    &::after {
+      background: $cheeks;
+      border-radius: 100%;
+      content: '';
+      height: 12px;
+      left: 83px;
+      position: absolute;
+      width: 12px;
+    }
+  }
+
+  .shine {
+    background: $piece-color;
+    border-radius: 200px;
+    height: 20px;
+    left: 110px;
+    position: relative;
+    top: -20px;
+    transform: rotate(-35deg);
+    width: 8px;
+
+    &::before {
+      background: $piece-color;
+      border-radius: 100%;
+      content: '';
+      height: 8px;
+      position: absolute;
+      right: 2px;
+      top: -12px;
+      width: 8px;
+    }
   }
 }
 
+@keyframes blink {
+  0% {
+    transform: scaleY(1);
+	}
+
+  18% {
+    transform: scaleY(1);
+	}
+
+  20% {
+    transform: scaleY(0);
+	}
+
+  25% {
+    transform: scaleY(1);
+	}
+
+  38% {
+    transform: scaleY(1);
+	}
+
+  40% {
+    transform: scaleY(0);
+	}
+
+  45% {
+    transform: scaleY(1);
+	}
+
+  80% {
+    transform: scaleY(1);
+	}
+}
+
+@keyframes spinX {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(720deg);
+  }
+}
+
+
 @keyframes showOpen {
   0% {
-    margin-top: 50%;
+    margin-top: 10%;
     opacity: 0;
   }
 
@@ -204,7 +344,7 @@ input {
 
 @keyframes showForm {
   0% {
-    margin-top: 50%;
+    margin-top: 20%;
     opacity: 0;
   }
 
@@ -221,16 +361,18 @@ input {
   0% {
     transform: scale(0);
   }
+
   100% {
     transform: scale(1);
   }
 }
 
 @keyframes growLetter {
-  0% {
-    transform: scale(0);
+  from {
+    font-size: 0;
   }
-  100% {
-    transform: scale(1);
+
+  to {
+    font-size: 9em;
   }
 }
