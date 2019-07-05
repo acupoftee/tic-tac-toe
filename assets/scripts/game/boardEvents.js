@@ -44,7 +44,7 @@ const runGame = () => {
           } else if (board.checkWin()) {
             sendMove(i, cellText, true)
             $('.winner-title').text('We Have a Winner!')
-            $('.winner-body').text(`Thanks for playing! ${cellText} wins! 🏆 Scroll and click "New Game to play again!"`)
+            $('.winner-body').text(`Thanks for playing! ${cellText} wins! 🏆\nScroll and click "New Game to play again!"`)
             $('.main-message').text(`Thanks for playing! ${cellText} wins!`)
             $('.winner').modal('show')
             clicks = 0
