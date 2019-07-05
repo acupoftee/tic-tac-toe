@@ -18,6 +18,7 @@ const getPasswordForm = event => {
   util.hideItems('.signed-in')
   if ($('.gameboard').hasClass('active')) {
     util.hideItems('.gameboard')
+    util.showItems('.logo')
   }
 }
 
@@ -26,6 +27,15 @@ const getGamePage = event => {
   util.hideItems('.change-password-box')
   util.showItems('.signed-in')
   $('form').trigger('reset')
+}
+
+const getHome = event => {
+  event.preventDefault()
+  util.hideItems('.gameboard')
+  util.hideItems('.in-game')
+
+  util.showItems('.signed-in')
+  util.showItems('.logo')
 }
 
 const getLandingPage = event => {
@@ -42,5 +52,6 @@ module.exports = {
   getSignInForm,
   getPasswordForm,
   getGamePage,
-  getLandingPage
+  getLandingPage,
+  getHome
 }
