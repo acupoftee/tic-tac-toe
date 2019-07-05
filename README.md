@@ -1,19 +1,19 @@
 <p align=center>
-<img src="https://thumbs.gfycat.com/FairParallelAddax-size_restricted.gif" alt="tic tac toe" title="tic tac toe">
+<img src="https://thumbs.gfycat.com/UnsungIncompleteCicada-size_restricted.gif" alt="tic tac toe" title="tic tac toe">
 </p>
 
 ## About
 Tic Tac Toe is a multiplayer player browser game where you can face off friends (and/or yourself) in a tic tac toe battle! 💪
 
-Users can also create an accout and sign into an existing account to view stats!
+Create an accout and sign into an existing account to view stats!
 
 
 <p align=center>
-<img src="https://thumbs.gfycat.com/SlimPracticalChrysalis-small.gif" height="400">
+<img src="https://thumbs.gfycat.com/ThankfulNarrowCommabutterfly-size_restricted.gif" height="400">
 </p>
 
 <p align=center>
-<img src="https://thumbs.gfycat.com/ThoseAlienatedHorsemouse-small.gif" height="400">
+<img src="https://thumbs.gfycat.com/DistortedWeirdGarpike-size_restricted.gif" height="400">
 </p>
 
 ## Planning
