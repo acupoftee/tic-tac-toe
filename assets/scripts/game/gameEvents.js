@@ -11,7 +11,7 @@ const onCreateGame = event => {
     .catch(ui.createGameFailure)
 }
 
-const onGetStats = (event, id) => {
+const onGetStats = event => {
   event.preventDefault()
 
   api.getAllGames()
