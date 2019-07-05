@@ -7,6 +7,7 @@ const rows = 3
 
 const resetGame = () => {
   $('.cell').text('')
+  $('.cell').removeClass('letter-ani')
   gameBoard = ['', '', '', '', '', '', '', '', '']
   $('.main-message').text('X\'s turn')
   $('.message').text('')
