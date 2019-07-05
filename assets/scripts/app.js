@@ -21,9 +21,10 @@ $(() => {
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('click', authEvents.onSignOut)
 
-  $('#create-game').on('click', gameEvents.onCreateGame)
+  $('.create-game').on('click', gameEvents.onCreateGame)
   $('#get-games').on('click', gameEvents.onGetStats)
   $('#new-password').on('click', styleEvents.getPasswordForm)
+  $('#home').on('click', styleEvents.getHome)
 
   // GAME EVENTS
   $('.back').on('click', styleEvents.getLandingPage)
