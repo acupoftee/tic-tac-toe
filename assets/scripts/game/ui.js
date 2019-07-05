@@ -10,6 +10,9 @@ const createGameSuccessful = responseData => {
   board.resetGame()
   $('.gameboard').addClass('board-ani')
   util.hideItems('.logo')
+  util.hideItems('.signed-in')
+
+  util.showItems('.in-game')
   util.showItems('.gameboard')
 }
 
