@@ -103,7 +103,6 @@
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
     </div>
   </div>
 </div>
@@ -180,7 +179,6 @@
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
     </div>
   </div>
 </div>
@@ -215,8 +213,22 @@
     <div class="button-group">
     <button class="create-game" type="submit">New Game</button>
     <button id="get-games" type="submit">Game Stats</button>
-    <button id="new-password" type="submit">Settings</button>
+    <button id="settings" type="submit">Settings</button>
     <button id="sign-out" type="submit">Sign Out</button>
+  </div>
+  </div>
+
+  <div class="settings hidden">
+    <div class="button-group">
+    <button id="new-password" type="submit">Change Password</button>
+    <button id="new-theme" type="submit">Themes</button>
+    <div class="themes hidden">
+      <div class="theme" id="grape"></div>
+      <div class="theme" id="strawberry"></div>
+      <div class="theme" id="lime"></div>
+      <div class="theme" id="blueberry"></div>
+    </div>
+    <button id="return" type="submit">Back</button>
   </div>
   </div>
 
