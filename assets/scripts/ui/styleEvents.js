@@ -33,9 +33,13 @@ const getHome = event => {
   event.preventDefault()
   util.hideItems('.gameboard')
   util.hideItems('.in-game')
+  util.hideItems('.game-finished')
+  util.hideItems('.x')
+  util.hideItems('.o')
 
   util.showItems('.signed-in')
   util.showItems('.logo')
+  util.showItems('.first-header')
 }
 
 const getLandingPage = event => {
