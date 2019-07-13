@@ -17,8 +17,6 @@
 <body>
   <div class="logo active">
     <div class="x-logo">X</div>&thinsp;
-    <!-- <div class="o-logo">O
-    </div> -->
     <div class="face">
       <div class="eyes"></div>
       <div class="smile"></div>
@@ -34,12 +32,7 @@
     </div>
   </div>
 
-  <!-- <h1 class="second-header hidden">Tic Tac Toe</h1> -->
   <div class="container game-forms">
-    <!-- <div class="logo no-ani hidden">
-          <div class="x-logo">X</div><div class="o-logo">O</div>
-        </div> -->
-    <!-- <h1 class="second-header hidden">Tic Tac Toe</h1> -->
     <div class="sign-up-box hidden">
       <form id="sign-up">
         <h3>Sign Up</h3>
@@ -227,11 +220,22 @@
   </div>
   </div>
 
-  <div class="in-game hidden">
+  <div class="game-finished hidden">
+    <div class="win-logo hidden">
+      <div class="x-logo x hidden">X</div>
+      <div class="space hidden">&thinsp;</div>
+      <div class="face o hidden">
+        <div class="eyes"></div>
+        <div class="smile"></div>
+        <div class="cheeks"></div>
+        <div class="shine"></div>
+      </div>
+    </div>
+    <h1 class="win-message"></h1>
     <div class="button-group">
-    <button class="create-game" type="submit">New Game</button>
-    <button id="home" type="submit">Home</button>
-  </div>
+      <button class="create-game" type="submit">Play Again</button>
+      <button id="home" type="submit">Home</button>
+    </div>
   </div>
 
   <div class="modal winner fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
