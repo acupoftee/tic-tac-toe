@@ -16,6 +16,7 @@ const resetGame = () => {
   utils.showItems('.first-header')
   utils.hideItems('.x')
   utils.hideItems('.o')
+  utils.hideItems('.space')
 }
 
 const addPiece = (index, piece) => {
