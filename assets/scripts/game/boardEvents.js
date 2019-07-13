@@ -2,6 +2,7 @@
 
 const api = require('./api')
 const board = require('./board')
+const util = require('../utils/util')
 
 const runGame = () => {
   const $cellArray = $('.cell')
@@ -35,18 +36,29 @@ const runGame = () => {
           // end the game if it's a tie or if there's a winner
           if (!board.checkWin() && board.isFull()) {
             sendMove(i, cellText, true)
-            $('.winner-title').text('Tie Game!')
-            $('.winner-body').text('We have a tie. Everybody wins! 🏆')
-            $('.winner').modal('show')
-            $('.main-message').text('It\'s a tie!')
+            util.hideItems('.main-message')
+            util.hideItems('.gameboard')
+            util.hideItems('.first-header')
+
+            // show win logo
+            util.showItems('.game-finished')
+            util.showItems('.win-logo')
+            util.showItems('.x')
+            util.showItems('.space')
+            util.showItems('.o')
+            $('.win-message').text('Tie Game! Everyone Wins!')
             clicks = 0
             $('.gameboard').removeClass('board-ani')
           } else if (board.checkWin()) {
             sendMove(i, cellText, true)
-            $('.winner-title').text('We Have a Winner!')
-            $('.winner-body').text(`Thanks for playing! ${cellText} wins! 🏆\nScroll and click "New Game to play again!"`)
-            $('.main-message').text(`Thanks for playing! ${cellText} wins!`)
-            $('.winner').modal('show')
+
+            util.hideItems('.first-header')
+            util.hideItems('.gameboard')
+            util.showItems('.game-finished')
+            util.showItems('.win-logo')
+            cellText === 'X' ? util.showItems('.x') : util.showItems('.o')
+            $('.win-message').text('Winner!')
+
             clicks = 0
             $('.gameboard').removeClass('board-ani')
           } else {
