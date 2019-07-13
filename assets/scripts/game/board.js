@@ -1,5 +1,5 @@
 'use strict'
-
+const utils = require('../utils/util')
 let gameBoard = ['', '', '', '', '', '', '', '', '']
 const rows = 3
 // let scoreX = 0
@@ -11,6 +11,11 @@ const resetGame = () => {
   gameBoard = ['', '', '', '', '', '', '', '', '']
   $('.main-message').text('X\'s turn')
   $('.message').text('')
+
+  utils.hideItems('.game-finished')
+  utils.showItems('.first-header')
+  utils.hideItems('.x')
+  utils.hideItems('.o')
 }
 
 const addPiece = (index, piece) => {
