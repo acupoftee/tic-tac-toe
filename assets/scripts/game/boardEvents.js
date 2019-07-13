@@ -46,7 +46,7 @@ const runGame = () => {
             util.showItems('.x')
             util.showItems('.space')
             util.showItems('.o')
-            $('.win-message').text('Tie Game! Everyone Wins!')
+            $('.win-message').text('Tie Game!')
             clicks = 0
             $('.gameboard').removeClass('board-ani')
           } else if (board.checkWin()) {
