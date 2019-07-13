@@ -40,7 +40,8 @@ h3 {
   color: $smol-headers;
 }
 
-.logo {
+.logo,
+.win-logo {
   display: flex;
   font-size: 11em;
   justify-content: center;
@@ -48,17 +49,17 @@ h3 {
   line-height: 1em;
   margin-bottom: auto;
   margin-top: 10%;
+}
 
-  .x-logo {
-    // https://callmenick.com/dev/level-up-animations-cubic-bezier/
-    animation: spinX 2.8s 1s cubic-bezier(0, 1, 1, 0) infinite;
-    color: $piece-x;
-    transform-origin: center;
-  }
+.x-logo {
+  // https://callmenick.com/dev/level-up-animations-cubic-bezier/
+  animation: spinX 2.8s 1s cubic-bezier(0, 1, 1, 0) infinite;
+  color: $piece-x;
+  transform-origin: center;
+}
 
-  .o-logo {
-    color: $piece-o;
-  }
+.o-logo {
+  color: $piece-o;
 }
 
 .first-header,
