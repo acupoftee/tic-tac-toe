@@ -13,13 +13,6 @@ $white: #f7fcfc;
 $gray: #97a6af;
 $smol-headers: darken($gray, 20%);
 
-
-// purple theme colors
-// $purple-background: #f4e7fb;
-// $purple-button: #5c0561;
-// $purple-piece-x: #64309c;
-
-
 // logo face vars
 $face: 140px;
 $face-color: #ffdb10;
@@ -29,13 +22,17 @@ $eye-radius: 15px;
 $cheeks: #ff7e7e;
 
 // theme button colors
-$plum: #5c0561;
-$peach: #CD334C;
-$lime: lighten(#36802d, 10%);
+$plum: #4d1d49;
+$peach: #cd334c;
+$lime: #234d20; //lighten(#36802d, 10%);
 $blueberry: $piece-x;
 
 // position constants
 $title-margin-top: 1%;
+
+html {
+  transition: .5s ease;
+}
 
 body {
   background-color: $background;
@@ -82,6 +79,7 @@ h3 {
 
   &:hover {
     color: $background;
+    transition: .5s ease;
   }
 }
 
@@ -112,10 +110,15 @@ button {
   background-color: $form-color;
   color: darken($white, 5%);
   letter-spacing: .4em;
+
+  &:hover {
+    color: $background;
+    transition: .5s ease;
+  }
 }
 
 input {
-  // background-color: white;
+  background-color: '#fff';
   border: 0;
   border-radius: 20px;
   padding: 5px;
