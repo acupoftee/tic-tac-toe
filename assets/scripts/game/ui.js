@@ -8,8 +8,11 @@ const createGameSuccessful = responseData => {
   store.game = responseData.game.id
   store.plays = responseData.game.cells
   board.resetGame()
-  $('.gameboard').addClass('board-ani')
   util.hideItems('.logo')
+  if ($('.signed-in').hasClass('active')) {
+    $('.rulebook').modal('show')
+  }
+  $('.gameboard').addClass('board-ani')
   util.hideItems('.signed-in')
   util.hideItems('')
 
