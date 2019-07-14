@@ -81,7 +81,7 @@ h3 {
   min-width: 15vw;
 
   &:hover {
-    color: lighten($piece-o, 20%);
+    color: $background;
   }
 }
 
@@ -115,7 +115,7 @@ button {
 }
 
 input {
-  background-color: $white;
+  // background-color: white;
   border: 0;
   border-radius: 20px;
   padding: 5px;
@@ -169,8 +169,7 @@ input {
   }
 
   &:hover {
-    background: lighten($background, 5%);
-    transition: .5s ease;
+    cursor: pointer;
   }
 }
 
