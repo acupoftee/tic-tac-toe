@@ -15,11 +15,21 @@ const getSignInForm = event => {
 
 const getPasswordForm = event => {
   util.showItems('.change-password-box')
-  util.hideItems('.signed-in')
+  util.hideItems('.settings-form')
   if ($('.gameboard').hasClass('active')) {
     util.hideItems('.gameboard')
     util.showItems('.logo')
   }
+}
+
+const getSettingsForm = event => {
+  util.hideItems('.signed-in')
+  util.showItems('.settings-form')
+  util.hideItems('.themes')
+}
+
+const getThemes = event => {
+  util.showItems('.themes')
 }
 
 const getGamePage = event => {
@@ -31,11 +41,15 @@ const getGamePage = event => {
 
 const getHome = event => {
   event.preventDefault()
-  util.hideItems('.gameboard')
-  util.hideItems('.in-game')
-  util.hideItems('.game-finished')
-  util.hideItems('.x')
-  util.hideItems('.o')
+  if ($('.settings-form').hasClass('active')) {
+    util.hideItems('.settings-form')
+  } else {
+    util.hideItems('.gameboard')
+    util.hideItems('.in-game')
+    util.hideItems('.game-finished')
+    util.hideItems('.x')
+    util.hideItems('.o')
+  }
 
   util.showItems('.signed-in')
   util.showItems('.logo')
@@ -57,5 +71,7 @@ module.exports = {
   getPasswordForm,
   getGamePage,
   getLandingPage,
-  getHome
+  getHome,
+  getSettingsForm,
+  getThemes
 }
