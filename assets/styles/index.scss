@@ -15,9 +15,10 @@ $smol-headers: darken($gray, 20%);
 
 
 // purple theme colors
-$purple-background: #f4e7fb;
-$purple-button: #5c0561;
-$purple-piece-x: #64309c;
+// $purple-background: #f4e7fb;
+// $purple-button: #5c0561;
+// $purple-piece-x: #64309c;
+
 
 // logo face vars
 $face: 140px;
@@ -26,6 +27,12 @@ $face-shadow: #ffcc24;
 $eyes: #000;
 $eye-radius: 15px;
 $cheeks: #ff7e7e;
+
+// theme button colors
+$plum: #5c0561;
+$peach: #CD334C;
+$lime: lighten(#36802d, 10%);
+$blueberry: $piece-x;
 
 // position constants
 $title-margin-top: 1%;
@@ -168,7 +175,7 @@ input {
 }
 
 .row.board {
-    margin: 0;
+  margin: 0;
 }
 
 .board-ani {
@@ -280,6 +287,54 @@ input {
       top: -12px;
       width: 8px;
     }
+  }
+}
+
+.themes {
+  display: hidden;
+}
+
+.themes.active {
+  display: flex;
+  justify-content: center;
+}
+
+.theme {
+  align-items: center;
+  border-radius: 100%;
+  cursor: pointer;
+  height: 15px;
+  justify-content: space-between;
+  margin: 2%;
+  width: 15px;
+}
+
+.grape {
+  background-color: $plum;
+
+  &:hover {
+    background-color: lighten($plum, 10%);
+  }
+}
+
+.strawberry {
+  background-color: $peach;
+  &:hover {
+    background-color: lighten($peach, 10%);
+  }
+}
+
+.lime {
+  background-color: $lime;
+  &:hover {
+    background-color: lighten($lime, 10%);
+  }
+}
+
+.blueberry {
+  background-color: $blueberry;
+  &:hover {
+    background-color: lighten($blueberry, 10%);
   }
 }
 
