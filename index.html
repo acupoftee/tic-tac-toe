@@ -187,9 +187,6 @@
 </div>
 </div>
   <!-- forms -->
-
-
-
   <p class="games"></p>
   <div class="container gameboard hidden">
     <p class="main-message"></p>
@@ -250,25 +247,6 @@
     </div>
   </div>
 
-  <div class="modal winner fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title winner-title" id="exampleModalLongTitle"></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body winner-body">
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-  </div>
-
   <div class="modal playerStats fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -316,6 +294,28 @@
       </div>
       <div class="modal-body">
         You shall not have a new password 🧙‍
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="modal rulebook fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">How To Play!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body rule-text">
+        <p>The game is played on a grid that's 3 squares by 3 squares. You are X, and your opponent is O. Players take turns putting their marks in empty squares.</p>
+
+      <p>The first player to get 3 of their marks in a row (up, down, across, or diagonally) is the winner. When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.</p>
+      <p>Good luck and have fun! 🎉</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
