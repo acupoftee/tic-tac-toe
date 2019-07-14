@@ -297,6 +297,7 @@ input {
 }
 
 .themes.active {
+  animation: showThemes 1s ease;
   display: flex;
   justify-content: center;
 }
@@ -321,6 +322,7 @@ input {
 
 .strawberry {
   background-color: $peach;
+
   &:hover {
     background-color: lighten($peach, 10%);
   }
@@ -328,6 +330,7 @@ input {
 
 .lime {
   background-color: $lime;
+
   &:hover {
     background-color: lighten($lime, 10%);
   }
@@ -335,9 +338,14 @@ input {
 
 .blueberry {
   background-color: $blueberry;
+
   &:hover {
     background-color: lighten($blueberry, 10%);
   }
+}
+
+.theme-button {
+  z-index: 2;
 }
 
 @keyframes blink {
@@ -412,6 +420,21 @@ input {
 
   100% {
     margin-top: 3%;
+  }
+}
+
+@keyframes showThemes {
+  0% {
+    margin-top: -5%;
+    opacity: 0;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    margin-top: 0;
   }
 }
 
