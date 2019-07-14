@@ -3,6 +3,7 @@
 const api = require('./api')
 const board = require('./board')
 const util = require('../utils/util')
+const pieceStore = require('./pieceStore')
 
 const runGame = () => {
   const $cellArray = $('.cell')
@@ -23,7 +24,7 @@ const runGame = () => {
           ++clicks
           const cellText = clicks % 2 ? 'X' : 'O'
           const turnText = clicks % 2 ? 'O' : 'X'
-          const cellColor = clicks % 2 ? '#373e49' : '#f7fcfc'
+          const cellColor = clicks % 2 ? pieceStore.xColor : pieceStore.oColor
 
           // swap pieces
           $(currentCell).addClass('letter-ani')
