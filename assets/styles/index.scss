@@ -348,6 +348,13 @@ input {
   z-index: 2;
 }
 
+.rule-text {
+  text-align: left;
+}
+
+.demo-gif {
+  text-align: center;
+}
 @keyframes blink {
   0% {
     transform: scaleY(1);
