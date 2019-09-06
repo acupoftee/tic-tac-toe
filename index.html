@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tic Tac Toe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:image" content="https://i.imgur.com/Peg5Q5K.png">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="logo active">
+    <div class="x-logo">X</div>&thinsp;
+    <div class="face">
+      <div class="eyes"></div>
+      <div class="smile"></div>
+      <div class="cheeks"></div>
+      <div class="shine"></div>
+    </div>
+  </div>
+  <h1 class="first-header">Tic Tac Toe</h1>
+  <div class="opening active">
+    <div class="button-group">
+      <button class="button btn" id="sign-up-button">Sign Up</button>
+      <button class="button btn" id="sign-in-button">Sign In</button>
+    </div>
+  </div>
+
+  <div class="container game-forms">
+    <div class="sign-up-box hidden">
+      <form id="sign-up">
+        <h3>Sign Up</h3>
+        <div class="forms">
+          <input name="credentials[email]" type="email" placeholder="Email" required>
+          <input name="credentials[password]" type="password" placeholder="Password" required>
+          <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password" required>
+          <button id="sign-up-btn" type="submit">Sign Up</button>
+          <button class="back" type="submit">Back</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="sign-in-box hidden">
+      <form id="sign-in">
+        <h3>Sign In</h3>
+        <div class="forms">
+          <input name="credentials[email]" type="email" placeholder="Email" required>
+          <input name="credentials[password]" type="password" placeholder="Password" required>
+          <button type="submit">Sign In</button>
+          <button class="back" type="submit">Back</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="change-password-box hidden">
+      <form id="change-password">
+        <h3>Change Password</h3>
+        <div class="forms">
+          <input name="passwords[old]" type="password" placeholder="Old Password" required>
+          <input name="passwords[new]" type="password" placeholder="New Password" required>
+          <button type="submit">Change Password</button>
+          <button class="game-back" type="submit">Back</button>
+        </div>
+      </form>
+    </div>
+
+  <div class="modal good fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Sign Up Successful!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        You've successfully signed up 🎉 Have fun!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" data-dismiss="modal">Sign In</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal badUp fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLongTitle">Sign Up Failure</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      You shall not pass 🧙‍
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="modal badIn fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLongTitle">Sign In Failure</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      You shall not pass 🧙‍
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="modal in fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLongTitle">Sign In Successful!</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      You've successfully signed in 🎉 Have fun!
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn" data-dismiss="modal">Go play!</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="modal out fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLongTitle">Sign out Successful!</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      You've successfully signed out 🎉 See you again soon!
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal noOut fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLongTitle">Sign Out Failure</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      You shall not leave 🧙‍
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
+</div>
+  <!-- forms -->
+  <p class="games"></p>
+  <div class="container gameboard hidden">
+    <p class="main-message"></p>
+    <p class="message"></p>
+    <div class="cells embed-responsive embed-responsive-1by1">
+      <div class="row board embed-responsive-item board-ani">
+        <div class="col-4 cell"></div>
+        <div class="col-4 cell"></div>
+        <div class="col-4 cell"></div>
+        <div class="col-4 cell"></div>
+        <div class="col-4 cell"></div>
+        <div class="col-4 cell"></div>
+        <div class="col-4 cell"></div>
+        <div class="col-4 cell"></div>
+        <div class="col-4 cell"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="signed-in hidden">
+    <div class="button-group">
+    <button class="create-game" type="submit">New Game</button>
+    <button id="get-games" type="submit">Game Stats</button>
+    <button id="settings" type="submit">Settings</button>
+    <button id="sign-out" type="submit">Sign Out</button>
+  </div>
+  </div>
+
+  <div class="settings-form hidden">
+    <div class="button-group">
+    <button id="return" type="submit">Back</button>
+    <button id="new-password" type="submit">Change Password</button>
+    <button class="theme-button" id="new-theme" type="submit">Themes</button>
+    <div class="themes">
+      <div class="theme grape"></div>
+      <div class="theme strawberry"></div>
+      <div class="theme lime"></div>
+      <div class="theme blueberry"></div>
+    </div>
+  </div>
+  </div>
+
+  <div class="game-finished hidden">
+    <div class="win-logo hidden">
+      <div class="x-logo x hidden">X</div>
+      <div class="space hidden">&thinsp;</div>
+      <div class="face o hidden">
+        <div class="eyes"></div>
+        <div class="smile"></div>
+        <div class="cheeks"></div>
+        <div class="shine"></div>
+      </div>
+    </div>
+    <h1 class="win-message"></h1>
+    <div class="button-group">
+      <button class="create-game" type="submit">Play Again</button>
+      <button id="home" type="submit">Home</button>
+    </div>
+  </div>
+
+  <div class="modal playerStats fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Game Stats</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body gameStats"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="modal newpassword fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Password Change Successful!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        You've successfully changed your password! 🎉
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="modal nopassword fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Password Change Failure</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        You shall not have a new password 🧙‍
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="modal rulebook fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">How To Play!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body rule-text">
+        <p>The game is played on a grid that's 3 squares by 3 squares. You are X, and your opponent is O. Players take turns putting their marks in empty squares.</p>
+
+      <p>The first player to get 3 of their marks in a row (up, down, across, or diagonally) is the winner. When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.</p>
+      <p>Good luck and have fun! 🎉</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+</body>
+
+</html>
